@@ -1,0 +1,109 @@
+{% include 'base.html' %}
+
+{% block content  %}
+
+<h1 class='text-center p-3 text-light rounded' style="background: url('https://media.istockphoto.com/photos/coronavirus-new-strain-wide-dark-background-picture-id1308624310?b=1&k=20&m=1308624310&s=170667a&w=0&h=HyEGR3DtK8TD2_kqoryPPuBWexQnG_KK0KhHYtXvm-c=')">COVID 19 PREDICTOR ANALYSIS</h1>
+<br/>
+
+<div class='container mb-6 mt-2 p-4'>
+
+    <div class='row'>
+        <div class='col-md-8'>
+                        <form action="{% url 'predict' %}">
+
+                        {% csrf_token %}
+
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                    <div class="mb-3">
+                                        <label for="cough" class="form-label">Cough</label>
+                                        <input type="number" class="form-control" name="cough" id="cough" required placeholder="Enter 0 for No, 1 for Yes">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="fever" class="form-label">Fever</label>
+                                        <input type="number" class="form-control" name="fever" id="fever" required placeholder="Enter 0 for No, 1 for Yes">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="sore_throat" class="form-label">Sore Throat</label>
+                                        <input type="number" class="form-control" name="sore_throat" id="sore_throat" required placeholder="Enter 0 for No, 1 for Yes">
+                                    </div>
+
+
+                                    <div class="mb-3">
+                                        <label for="shortness_breath" class="form-label">Shortness of Breath</label>
+                                        <input type="number" class="form-control" name="shortness_breath" id="shortness_breath" required placeholder="Enter 0 for No, 1 for Yes">
+                                    </div>
+
+
+
+                                    <div class="mb-3">
+                                        <label for="headache" class="form-label">Headache</label>
+                                        <input type="number" class="form-control" name="headache" id="headache" required placeholder="Enter 0 for No, 1 for Yes">
+                                    </div>
+
+
+                            </div>
+
+
+
+
+
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="age60" class="form-label">Age 60 or above</label>
+                                    <input type="number" class="form-control" name="age60" id="age60" required placeholder="Enter 0 for No, 1 for Yes">
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="contact_with_positive" class="form-label">Contact with Covid positive patient</label>
+                                    <input type="number" class="form-control" name="contact_with_positive" id="contact_with_positive" required placeholder="Enter 0 for No, 1 for Yes">
+                                </div>
+
+
+
+                                <div class="mb-3">
+                                    <label for="gender" class="form-label">Gender</label>
+                                    <input type="number" class="form-control" name="gender" id="gender" required placeholder="Enter 0 for Female, 1 for Male">
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="abroad" class="form-label">Went Aborad</label>
+                                    <input type="number" class="form-control" name="abroad" id="abroad" required placeholder="Enter 0 for No, 1 for Yes">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    <button type="submit" value="Submit" class="btn btn-success mt-2 mb-3 shadow pt-3 pb-3 pl-1 pr-1">Confirm Covid Test</button>
+
+
+            </form>
+
+         </div>
+
+
+         <div class='col-md-4'>
+
+            <div class="m-5 justify-content-center">
+                 {% comment %} <h1 style="color: purple !important" class="text-center mb-4 mt-2 text-primary"><b>Enter Perfect Values</b></h1> {% endcomment %}
+                 {% comment %} <h2 class="text-center mt-2 mb-2 p-2"> Choose <b>0</b> for <b>No</b></h2>
+                 <h2 class="text-center mt-2 mb-2 p-2"> Choose <b>[2]</b> > <b>No</b></h2> {% endcomment %}
+                 <img class="rounded text-center img-responsive" style="width: 100%" src="https://dph.georgia.gov/sites/dph.georgia.gov/files/styles/3_2_2106px_x_1404px/public/2021-04/GettyImages-1210455332.jpg?h=32b23554&itok=hXoJsD8u">
+            </div>
+           
+         </div>
+
+    </div>
+
+
+</div>
+
+
+
+ 
+{% endblock content  %}

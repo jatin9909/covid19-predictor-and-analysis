@@ -1,0 +1,205 @@
+{% include 'base.html' %}
+
+{% block content  %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+{% comment %} #myImg1 {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg1:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption1 {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption1 {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+  }
+  
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+.close1 {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+.close1:hover,
+.close1:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  } {% endcomment %}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+.row {
+    {% comment %} display: -ms-flexbox; {% endcomment %}
+    display: flex;
+    {% comment %} -ms-flex-wrap: wrap; {% endcomment %}
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  
+.col-sm-12 {
+    {% comment %} -ms-flex: 0 0 100%; {% endcomment %}
+    flex: 0 0 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  
+.row , .images{
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+      width: 100%;
+    }  
+}
+</style>
+</head>
+
+<body>
+    <br>
+    <div style="text-align:center">
+      <h2>Covid-19 Time Series Analysis</h2>
+      <p>I created this Time Series Analysis with the help of LSTM(Long Short Term Memory) RNN in Deep Neural Networks.<br>
+      Source code is here -<a href="https://www.kaggle.com/code/jkanthony/prediction-of-covid-cases-in-india-using-lstm#Predicting-the-upcoming-cases-now">Kaggle</a></p>
+      <p>Click on the images below:</p>
+    </div>
+  
+  <div class="container-fluid">  
+      <hr>
+      <div class="row">
+              <center> <h5><u> Prediction of Third Wave Covid-19</u> </h5>
+              <p> India Experienced the Third Covid Wave in January 2022, with the Help of Deep Neural Networks, I predicted the peak of Covid-19 cases.
+                <br>Error Terms: MAPE: 0.2837779647827602
+              </p>
+              </center>
+      </div>
+  
+      <div class="images">  
+                <img id="myImg1" src="{% static "predict2.jpg" %}" alt="Predict the Third Covid-19 Wave" style="width:100%;max-width:1000px" align="center">
+      </div> 
+      <br>
+      <br>
+      <div class="row">
+        <center> <h5><u> Prediction of new Covid-19 cases</u> </h5>
+        <p> After gather dataset of Covid-19 cases upto 30th March, I predicted the new covid-19 cases for April month.
+          <br>Error Terms: 5.489131243127725
+        </p>
+        </center>
+</div>
+
+<div class="images">  
+          <img id="myImg2" src="{% static "predict_new2.jpg" %}" alt="Predict new Covid-19 cases" style="width:100%;max-width:1000px" align="center">
+</div> 
+      
+  </div>
+
+  {% comment %} <!-- The Modal -->
+<div id="myModal1" class="modal">
+    <span class="close1">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption1"></div>
+  </div>
+  
+  <script>
+    // Get the modal
+  var modal1 = document.getElementById("myModal1");
+  
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+  var img1 = document.getElementById("myImg1");
+  var modalImg1 = document.getElementById("img01");
+  var captionText1 = document.getElementById("caption1");
+  img1.onclick = function(){
+    modal1.style.display = "block";
+    modalImg1.src = this.src;
+    captionText1.innerHTML = this.alt;
+  }
+  
+  // Get the <span> element that closes the modal
+  var span1 = document.getElementsByClassName("close1")[0];
+  
+  // When the user clicks on <span> (x), close the modal
+  span1.onclick = function() { 
+    modal1.style.display = "none";
+  }
+  
+  </script> {% endcomment %}
+
+</body>
+
+</html>
+
+{% endblock %}

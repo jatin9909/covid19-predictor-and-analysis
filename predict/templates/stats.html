@@ -1,0 +1,607 @@
+{% include 'base.html' %}
+
+{% block content  %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+#myImg1 {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg1:hover {opacity: 0.7;}
+
+#myImg2 {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg2:hover {opacity: 0.7;}
+
+#myImg3 {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg3:hover {opacity: 0.7;}
+
+#myImg4 {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg4:hover {opacity: 0.7;}
+
+#myImg5 {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg5:hover {opacity: 0.7;}
+
+#myImg6 {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg6:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption1 {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption1 {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+#caption2 {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption2 {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+#caption3 {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption3 {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+#caption4 {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption4 {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+#caption5 {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption5 {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+#caption6 {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption6 {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close1 {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close1:hover,
+.close1:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* The Close Button */
+.close2 {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close2:hover,
+.close2:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* The Close Button */
+.close3 {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close3:hover,
+.close3:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close4 {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close4:hover,
+.close4:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close5 {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close5:hover,
+.close5:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close6 {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close6:hover,
+.close6:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  {% comment %} display: -ms-flexbox; {% endcomment %}
+  display: flex;
+  {% comment %} -ms-flex-wrap: wrap; {% endcomment %}
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col-sm-12 {
+  {% comment %} -ms-flex: 0 0 100%; {% endcomment %}
+  flex: 0 0 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
+.row , .images{
+  display: flex;
+  justify-content: center;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+  <br>
+  <div style="text-align:center">
+    <h2>Covid-19 India Stats (Upto 30th March 2022)</h2>
+    <p>I created these plots with the help of Matplotlib and Seaborn python libraries.<br>
+    Source code is here -<a href="https://www.kaggle.com/code/jkanthony/comparison-of-impact-of-covid-19-and-vaccination#Comparison-of-Vaccination-in-11-countries-per-population">Kaggle</a></p>
+    <p>Click on the images below:</p>
+  </div>
+
+<div class="container-fluid">  
+    <hr>
+    <div class="row">
+            <center> <h5><u> Total Covid Cases/per million Cases</u> </h5>
+            <p> These are the images of Total Covid Cases and Total Covid Cases per Million population in India and some other 
+              Countries.<br> In these Images we can see that the absolute number of cases are higher in India but the cases per million cases are
+              relatively low.
+            </p>
+            </center>
+    </div>
+
+    <div class="images">  
+              <img id="myImg1" src="{% static "Total_covid_cases.png" %}" alt="Total Covid-19 Cases from March 2020 to March 2022 " style="width:100%;max-width:300px" align="center">
+              <img id="myImg2" src="{% static "Total_covid_cases_per_million.png" %}" alt="Total Covid-19 Cases per million from March 2020 to March 2022 " style="width:100%;max-width:300px" align="center">
+    </div> 
+    
+</div>
+<br>
+<br>
+<div class="container-fluid">  
+  <div class="row">
+          <center> <h5><u> Total Covid Deaths/per million Deaths</u> </h5>
+          <p> These are the images of Total Covid Deaths and Total Covid Deaths per Million population in India and some other 
+            Countries.<br> In these Images we can see that the absolute number of deaths are higher in India but the deaths per million cases are
+            relatively low.
+          </p>
+          </center>
+  </div>
+
+  <div class="images">  
+            <img id="myImg3" src="{% static "Total_covid_deaths.png" %}" alt="Total Covid-19 Deaths from March 2020 to March 2022 " style="width:100%;max-width:300px" align="center">
+            <img id="myImg4" src="{% static "Total_covid_deaths_per_million.png" %}" alt="Total Covid-19 deaths per million from March 2020 to March 2022 " style="width:100%;max-width:300px" align="center">
+  </div> 
+  
+</div>
+
+<br>
+<br>
+<div class="container-fluid">  
+  <div class="row">
+          <center> <h5><u> Total Vaccination/population percentage vaccination</u> </h5>
+          <p> These are the Stats of Vaccination of people in India and percentage of population got vaccinated.
+            <br> In these Images we can see that the absolute number of Vaccination are higher in India but the Vaccination of percentage of population is
+            relatively low.
+          </p>
+          </center>
+  </div>
+
+  <div class="images">  
+            <img id="myImg5" src="{% static "populationvaccinated.png" %}" alt="Total population vaccinated upto 30th March 2022 " style="width:100%;max-width:300px" align="center">
+            <img id="myImg6" src="{% static "populationpercentage.png" %}" alt="Total Percentage of Population vaccinated upto 30th March 2022" style="width:100%;max-width:300px" align="center">
+  </div> 
+  
+</div>
+<!-- The Modal -->
+<div id="myModal1" class="modal">
+  <span class="close1">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption1"></div>
+</div>
+
+<script>
+  // Get the modal
+var modal1 = document.getElementById("myModal1");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img1 = document.getElementById("myImg1");
+var modalImg1 = document.getElementById("img01");
+var captionText1 = document.getElementById("caption1");
+img1.onclick = function(){
+  modal1.style.display = "block";
+  modalImg1.src = this.src;
+  captionText1.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span1 = document.getElementsByClassName("close1")[0];
+
+// When the user clicks on <span> (x), close the modal
+span1.onclick = function() { 
+  modal1.style.display = "none";
+}
+
+</script>
+
+<div id="myModal2" class="modal">
+  <span class="close2">&times;</span>
+  <img class="modal-content" id="img02">
+  <div id="caption2"></div>
+</div>
+
+
+<script>
+
+
+var modal2 = document.getElementById("myModal2");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img2 = document.getElementById("myImg2");
+var modalImg2 = document.getElementById("img02");
+var captionText2 = document.getElementById("caption2");
+img2.onclick = function(){
+  modal2.style.display = "block";
+  modalImg2.src = this.src;
+  captionText2.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span2 = document.getElementsByClassName("close2")[0];
+
+// When the user clicks on <span> (x), close the modal
+span2.onclick = function() { 
+  modal2.style.display = "none";
+}
+</script>
+
+<div id="myModal3" class="modal">
+  <span class="close3">&times;</span>
+  <img class="modal-content" id="img03">
+  <div id="caption3"></div>
+</div>
+
+
+<script>
+
+
+var modal3 = document.getElementById("myModal3");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img3 = document.getElementById("myImg3");
+var modalImg3 = document.getElementById("img03");
+var captionText3 = document.getElementById("caption3");
+img3.onclick = function(){
+  modal3.style.display = "block";
+  modalImg3.src = this.src;
+  captionText3.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span3 = document.getElementsByClassName("close3")[0];
+
+// When the user clicks on <span> (x), close the modal
+span3.onclick = function() { 
+  modal3.style.display = "none";
+}
+</script>
+
+<div id="myModal4" class="modal">
+  <span class="close4">&times;</span>
+  <img class="modal-content" id="img04">
+  <div id="caption4"></div>
+</div>
+
+
+<script>
+
+
+var modal4 = document.getElementById("myModal4");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img4 = document.getElementById("myImg4");
+var modalImg4 = document.getElementById("img04");
+var captionText4 = document.getElementById("caption4");
+img4.onclick = function(){
+  modal4.style.display = "block";
+  modalImg4.src = this.src;
+  captionText4.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span4 = document.getElementsByClassName("close4")[0];
+
+// When the user clicks on <span> (x), close the modal
+span4.onclick = function() { 
+  modal4.style.display = "none";
+}
+</script>
+
+<div id="myModal5" class="modal">
+  <span class="close5">&times;</span>
+  <img class="modal-content" id="img05">
+  <div id="caption5"></div>
+</div>
+
+
+<script>
+
+
+var modal5 = document.getElementById("myModal5");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img5 = document.getElementById("myImg5");
+var modalImg5 = document.getElementById("img05");
+var captionText5 = document.getElementById("caption5");
+img5.onclick = function(){
+  modal5.style.display = "block";
+  modalImg5.src = this.src;
+  captionText5.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span5 = document.getElementsByClassName("close5")[0];
+
+// When the user clicks on <span> (x), close the modal
+span5.onclick = function() { 
+  modal5.style.display = "none";
+}
+</script>
+
+<div id="myModal6" class="modal">
+  <span class="close6">&times;</span>
+  <img class="modal-content" id="img06">
+  <div id="caption6"></div>
+</div>
+
+
+<script>
+
+
+var modal6 = document.getElementById("myModal6");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img6 = document.getElementById("myImg6");
+var modalImg6 = document.getElementById("img06");
+var captionText6 = document.getElementById("caption6");
+img6.onclick = function(){
+  modal6.style.display = "block";
+  modalImg6.src = this.src;
+  captionText6.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span6 = document.getElementsByClassName("close6")[0];
+
+// When the user clicks on <span> (x), close the modal
+span6.onclick = function() { 
+  modal6.style.display = "none";
+}
+</script>
+
+</body>
+</html>
+
+
+
+{% endblock %}
