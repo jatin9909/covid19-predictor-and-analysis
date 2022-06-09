@@ -1,8 +1,6 @@
 from django.shortcuts import render, redirect
 import pandas as pd
 from requests import head
-from tangled_up_in_unicode import age
-from torch import short
 from .models import CovidPrediction
 import joblib
 
