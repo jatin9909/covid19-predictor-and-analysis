@@ -44,7 +44,7 @@ def predict(request):
     lis.append(abroad)
 
     print(lis)
-
+    lis = [int(i) for i in lis]
     classification = model.predict([lis])
 
     CovidPrediction.objects.create(
