@@ -26,7 +26,7 @@ labeldetection == 1.0.0
 pandas == 1.2.4
 
 # C:\Users\lenovo\Desktop\Django_Blog\covid_test\predict\views.py: 3
-requests == 2.26.0
+requests
 
 # C:\Users\lenovo\Desktop\Django_Blog\covid_test\predict\views.py: 4
 tangled_up_in_unicode == 0.1.0
