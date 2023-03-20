@@ -1,1 +1,1 @@
-web: gunicorn covid_test.wsgi
+web: gunicorn covid_test.wsgi --log-file -
